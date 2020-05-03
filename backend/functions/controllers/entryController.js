@@ -20,18 +20,6 @@ module.exports = (db,timeStamp) => {
             res.status(200).send(result)
         },
 
-        getAllEntries: async (req,res) => {
-            let query = db.collection(collection)
-            let response = []
-            let snapshot = await query.get()
-            let docs = await snapshot.docs
-            for (let doc of docs) {
-                const selectedItem = await doc.data()
-                response.push(selectedItem)
-            }
-            res.status(200).send(response)
-        },
-
         getEntriesByQuery: async (req,res) => {
             let query = db.collection(collection)
             if (req.body.before) {

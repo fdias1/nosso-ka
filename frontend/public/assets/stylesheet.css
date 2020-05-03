@@ -35,7 +35,22 @@ header {
     justify-content: center;
     padding:15px;
 }
-.button-container {
+/*.button-container {
+    margin-bottom:20px;
+    border: 2px solid #aaa;
+    background:#eee;
+    min-width:300px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    padding: 10px;
+    box-shadow: 10px 10px 10px #ccc;
+    border-radius: 8px;
+}
+*/
+.container {
     margin-bottom:20px;
     border: 2px solid #aaa;
     background:#eee;
@@ -66,7 +81,7 @@ header {
     justify-content: center;
 }
 
-.form-container {
+/*.form-container {
     margin-bottom:20px;
     border: 2px solid #aaa;
     background:#eee;
@@ -80,7 +95,7 @@ header {
     box-shadow: 10px 10px 10px #ccc;
     border-radius: 8px;
 }
-
+*/
 .form-title {
     margin-bottom: 20px;
     font-weight: bold;
