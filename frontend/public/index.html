@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Ka</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <header>
+    <h1>Nosso Ka</h1>
+  </header>
+  <div class="contend">
+    <div class="button-container" id="button-container">
+      <div class="button" id="km-button">Inserir KM</div>
+      <div class="button" id="gas-button">Inserir Abastecimento</div>
+      <div class="button" id="summary-button">Fechar a conta</div>
+      <div class="button" id="reset-button">Zerar o saldo</div>
+    </div>
+    
+    <div class="form-container">
+      <p class="form-title">Inserir: KM</p>
+      <form action="#submit" class="form">
+        <p class="title">Usuário: </p>
+        <select name="username" id="username">
+          <option>Fabio</option>
+          <option>Léo</option>
+          <option>Rita</option>
+        </select>
+        <p class="title">Valor: </p>
+        <input type="number" name="value" id="value">
+        <div class="button" id="form-submit">OK</div>
+        <div class="button" id="form-cancel">Cancelar</div>
+      </form>
+      
+      <div class="feedback-msg" style="display:none">
+        Valor inválido!
+      </div>
+    </div>
+    
+    <div class="users-container">
+      <ul class="all-users-data-container">
+      </ul>
+    </div>
+  </div>
+  <footer>
+    
+  </footer>
+  <script src="index.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>
