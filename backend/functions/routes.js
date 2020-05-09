@@ -1,9 +1,9 @@
 const express = require('express')
-module.exports = function setDatabase(db) {
+module.exports = function setDatabase(db,env) {
 
-    const controllers = require('./controllers/dbController')(db)
-    const userController = require('./controllers/userController')(db)
-    const entryController = require('./controllers/entryController')(db)
+    const controllers = require('./controllers/dbController')(db,env)
+    const userController = require('./controllers/userController')(db,env)
+    const entryController = require('./controllers/entryController')(db,env)
     const routes = express.Router()
     
     /**

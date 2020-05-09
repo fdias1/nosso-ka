@@ -1,7 +1,7 @@
-const collection = 'userdata'
 
 
-module.exports = (db) => {
+module.exports = (db,env) => {
+    const collection = `${env}-userdata`
     return {
 
         /**

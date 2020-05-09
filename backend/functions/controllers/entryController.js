@@ -1,7 +1,6 @@
-const collection = 'entries'
 
-
-module.exports = (db) => {
+module.exports = (db,env) => {
+    const collection = `${env}-entries`
     return {
         /**
          * HTTP: POST
@@ -24,6 +23,7 @@ module.exports = (db) => {
                 date,
                 active:true,
             }
+            
             const result = await db.collection(collection).add(newData)
             res.status(200).send(result)
         },
