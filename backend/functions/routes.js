@@ -1,23 +1,21 @@
 const express = require('express')
-module.exports = function setDatabase(db,timeStamp){
+module.exports = function setDatabase(db) {
 
     const controllers = require('./controllers/dbController')(db)
     const userController = require('./controllers/userController')(db)
-    const entryController = require('./controllers/entryController')(db,timeStamp)
+    const entryController = require('./controllers/entryController')(db)
     const routes = express.Router()
     
     /**
      * TEST ENDPOINTS
      */
-    
      routes.get('/welcome',(req,res) => res.send('welcome!'))
     
     
      /**
      * OLD ENDPOINTS
      */
-    
-     routes.post('/new',controllers.CreateUser) //replaced by /users/new
+    routes.post('/new',controllers.CreateUser) //replaced by /users/new
     routes.post('/addkm', controllers.addKm) // replaced by /entry/new
     routes.post('/addgas', controllers.addGas) // replaced by /entry/new
     routes.post('/updatebalance', controllers.updateBalance) // replaced by /entry/new
@@ -35,6 +33,7 @@ module.exports = function setDatabase(db,timeStamp){
     routes.post('/users/new', userController.createUser)
     routes.get('/users/get/:username', userController.getUser)
     routes.get('/users/getall', userController.getAllUsers)
+    routes.get('/users/login/:username', userController.login)
     // ENTRY ENDPOINTS
     routes.post('/entry/new', entryController.newEntry)
     routes.post('/entry/query', entryController.getEntriesByQuery)

@@ -10,8 +10,7 @@ admin.initializeApp({
 
 const express = require('express')
 const database = admin.firestore()
-const timeStamp = admin.firestore.Timestamp
-const routes = require('./routes')(database,timeStamp)
+const routes = require('./routes')(database)
 //const port = 3333
 
 const app = express()
@@ -23,8 +22,3 @@ app.use(routes)
 //console.log(`server ins running and listening port ${port}`)
 
 exports.app = functions.https.onRequest(app)
-
-
-/**
- * sandbox to dbqueries
- */

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Ka</title>
+  <link rel="stylesheet" href="../../assets/stylesheet.css">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="manifest" href="../../manifest.json">
+</head>
+<body>
+    <header>
+        <h1>Nosso Ka</h1>
+    </header>
+    <div class="contend">
+        <div class="container" id="welcome-logout-container">
+            <div id="welcome">Bem-vindo, Fábio</div>
+            <div id="logout">Sair</div>
+        </div>
+        <ul class='user-data-container'>
+            <p class="title">
+                Km rodado em aberto: 
+            </p>
+            <p class="value">
+                ${km.toFixed(2)} Km 
+            </p>
+            <p class="title">
+                Abastecimento em aberto: 
+            </p>
+            <p class="value">
+                R$ ${gas.toFixed(2)} 
+            </p>
+            <p class="title">
+                Saldo: 
+            </p>
+            <p class="value" style="font-weight: bold; color:${balance < 0 ? 'red' : 'green'}">
+                R$ ${balance.toFixed(2)}
+            </p>
+        </ul>
+    </div>
+    <footer>
+    
+    </footer>
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

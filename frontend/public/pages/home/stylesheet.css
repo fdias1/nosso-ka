@@ -1,0 +1,7 @@
+#welcome-logout-container {
+    display:flex;
+    align-items: center;
+    align-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
+}
