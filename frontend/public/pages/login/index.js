@@ -5,13 +5,13 @@ if(localStorage.username) {
     location.replace('../../index.html')
 }
 
-const apiAddress = 'http://localhost:5001/nosso-ka/us-central1/app/users/login'
+const loginEndpoint = 'https://us-central1-nosso-ka.cloudfunctions.net/app/users/login'
 const loginForm = document.getElementById('login-form')
 loginForm.onsubmit = async event => {
     event.preventDefault()
     document.getElementById('feedback-msg').style.display = 'none'
     const username = document.getElementById('username').value
-    const response = await (await fetch(apiAddress+`/${username}`)).json()
+    const response = await (await fetch(loginEndpoint+`/${username}`)).json()
 
     if(response) {
         localStorage.username = username

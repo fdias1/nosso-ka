@@ -1,0 +1,46 @@
+body, .background {
+    background-color:rgb(1,82,137);
+    min-height: 100vh;
+}
+
+.contend-container {
+    background-color:#fff;
+    /*max-height: 90vh;
+    */
+}
+
+.btn-primary {
+    background-color:rgb(1,119,193);
+    border-color:rgb(1,119,193);
+}
+
+.page-title {
+    color:rgb(1,82,137);
+    font-weight: bold;
+}
+
+#loading-gif {
+    height: 140px;
+    display:block;
+}
+
+.bg-balance-negativo {
+    background-color:#f78d86;
+}
+
+.bg-balance-positivo {
+    background-color:#abfc9f;
+}
+
+.bg-km {
+    background-color: yellow;
+}
+
+.bg-gas {
+    background-color: #81caf7;
+}
+
+.active {
+    font-weight: bolder;
+    font-size: 1.2rem;
+}

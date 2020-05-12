@@ -65,7 +65,11 @@ module.exports = (db,env) => {
          * -> username: user unique identifier.
          */
         login: async (req,res) => {
-            res.send(!await(await db.collection(collection).where('username','==',req.params.username).get()).empty)
+            const auth = !await(await db.collection(collection).where('username','==',req.params.username).get()).empty
+            res.send({
+                ok:auth,
+                message: auth ? null : 'login inválido'
+            })
         },
     }
 }
