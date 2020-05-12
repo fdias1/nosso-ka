@@ -1,24 +1,26 @@
-console.log('login page script')
-document.getElementById('feedback-msg').style.display = 'none'
-
-if(localStorage.username) {
-    location.replace('../../index.html')
+const form = document.getElementById('login-form')
+const myAuthApiAddress = 'https://us-central1-nosso-ka.cloudfunctions.net/app/users/login/'
+document.forms[0].onsubmit = async function formSubmit (event) {
+    event.preventDefault()
+    document.getElementById('feedback-msg').innerHTML = ''
+    const usuario = form.usuario.value
+    await login(usuario)
 }
 
-const loginEndpoint = 'https://us-central1-nosso-ka.cloudfunctions.net/app/users/login'
-const loginForm = document.getElementById('login-form')
-loginForm.onsubmit = async event => {
-    event.preventDefault()
-    document.getElementById('feedback-msg').style.display = 'none'
-    const username = document.getElementById('username').value
-    const response = await (await fetch(loginEndpoint+`/${username}`)).json()
+async function login (username) {
 
-    if(response) {
+    const myAuth = await (await fetch(myAuthApiAddress+username)).json()
+    console.log(myAuth)
+
+    if(myAuth.ok) {
         localStorage.username = username
-        location.replace('../../index.html')
+        redirect('home')   
+        console.log('logado!') 
     } else {
-        localStorage.removeItem('username')
-        document.getElementById('feedback-msg').style.display = 'block'
+        document.getElementById('feedback-msg').innerHTML = myAuth.message
     }
+}
 
+function redirect(path) {
+    location.href = `../${path}/index.html`
 }
