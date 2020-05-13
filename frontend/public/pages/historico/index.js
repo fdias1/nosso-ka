@@ -48,6 +48,7 @@ async function loadHistory() {
     const userData = data.allUsersData
     const entries = data.openEntriesData
     entries
+    .filter(entry => entry.type != 'balance')
     .sort((a,b) => b.date._seconds - a.date._seconds)
     .forEach((entry,index) =>{ 
         const temp = generateHistoryEntry(entry,userData,index)
