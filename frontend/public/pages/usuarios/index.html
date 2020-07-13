@@ -13,7 +13,12 @@
 </head>
 <body>
     <div class="background fluid-container d-flex justify-contend-center align-items-center">
-        <div class="contend-container container col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 rounded">
+        <div class="contend-container container col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 rounded" id="load">
+            <div class="row fluid-container">
+                <img src="../../assets/images/load.gif" class="mx-auto my-5" style="height: 170px;"alt="Load">
+            </div>
+        </div> 
+        <div class="contend-container container col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 rounded" id="contend-container">
             <div class="row">
                 <div class="col-12 d-flex justify-contend-center align-items-center">
                     <h1 class="text py-3 mx-auto page-title">Nosso Ka</h1>
@@ -22,6 +27,7 @@
             <div class="container contend-container py-3">
                 <!-- Inicio do conteudo da página-->
                 <h3 class="text py-3 page-title">Usuários:</h3>
+                <div id="json" class="container my-2"></div>
                 <!-- Final do conteudo da página-->
                 <div class="row d-flex align-items-center justify-contend-center mb-2">
                     <button link-to="home" id="voltar" class="m-auto col-5 btn btn-primary d-block align-self-center">Voltar</button>
